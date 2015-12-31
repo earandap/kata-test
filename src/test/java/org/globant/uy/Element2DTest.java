@@ -32,13 +32,13 @@ public class Element2DTest {
     }
 
     @Test
-    public void testNoCollision() throws Exception {
+    public void testCollision() throws Exception {
         when(p1.distance(any(Point2D.class))).thenReturn(4d, 3d, 1d);
         Assert.assertEquals(e1.collision(e2), true);
     }
 
     @Test
-    public void testCollision() throws Exception {
+    public void testNoCollision() throws Exception {
         when(p1.distance(any(Point2D.class))).thenReturn(7d, 3d, 1d);
         Assert.assertEquals(e1.collision(e2), false);
     }
