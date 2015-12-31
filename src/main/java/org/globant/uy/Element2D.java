@@ -16,8 +16,9 @@ public class Element2D {
     public boolean collision(Element2D e1) {
         if(e1 == null)
             throw new IllegalArgumentException();
-
-        return e1.getPtCenter().distance(this.getPtCenter()) <= (e1.getRadio() + this.getRadio());
+        double distance = e1.getPtCenter().distance(this.getPtCenter());
+        double radio = e1.getRadio() + this.getRadio();
+        return distance <= radio;
     }
 
     public double getRadio() {
